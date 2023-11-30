@@ -3,30 +3,32 @@ from flask import Flask, render_template, jsonify
 app = Flask(__name__)
 
 JOBS = [{
-    'id': 1,
-    'title': 'python developer',
-    'location': 'Hyderabad',
-    'salary': 'Rs.5,00,000'
+    'Id': 1,
+    'Title': 'Python Developer',
+    'Location': 'Hyderabad',
+    'Salary': 'Rs.5,00,000'
 }, {
-    'id': 2,
-    'title': 'java developer',
-    'location': 'Hyderabad',
-    'salary': 'Rs.5,50,000'
+    'Id': 2,
+    'Title': 'Java Developer',
+    'Location': 'Hyderabad',
+    'Salary': 'Rs.5,50,000'
 }, {
-    'id': 3,
-    'title': '.net developer',
-    'location': 'Chennai',
+    'Id': 3,
+    'Title': '.Net Developer',
+    'Location': 'Chennai',
 }, {
-    'id': 4,
-    'title': 'frontend developer',
-    'location': 'New delhi',
-    'salary': 'Rs.5,00,000'
+    'Id': 4,
+    'Title': 'Frontend Developer',
+    'Location': 'New Delhi',
+    'Salary': 'Rs.5,00,000'
 }]
 
 
 @app.route("/")
 def hello_world():
-  return render_template("home.html", jobs=JOBS, company_name='magnasoft')
+  return render_template("home.html",
+                         jobs=JOBS,
+                         company_name='Aurora Consulting')
 
 
 @app.route("/api/jobs")

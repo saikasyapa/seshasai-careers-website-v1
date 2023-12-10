@@ -11,16 +11,22 @@ JOBS = [{
     'Id': 2,
     'Title': 'Java Developer',
     'Location': 'Hyderabad',
-    'Salary': 'Rs.5,50,000'
-}, {
-    'Id': 3,
-    'Title': '.Net Developer',
-    'Location': 'Chennai',
+    'Salary': 'Rs.6,00,000'
 }, {
     'Id': 4,
     'Title': 'Frontend Developer',
     'Location': 'New Delhi',
     'Salary': 'Rs.5,00,000'
+}, {
+    'Id': 4,
+    'Title': 'Backend Developer',
+    'Location': 'banglore',
+    'Salary': '7,00,000'
+}, {
+    'Id': 5,
+    'Title': 'Data Analyst',
+    'Location': 'Lucknow',
+    'Salary': 'Rs.6,00,000'
 }]
 
 

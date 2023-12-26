@@ -1,30 +1,27 @@
 from flask import Flask, render_template, jsonify
-from database import engine
-from sqlalchemy import text
-
+from database import load_jobs_from_db,load_job_from_db
 app = Flask(__name__)
 
 
-def load_jobs_from_db():
-  with engine.connect() as conn:
-    result = conn.execute(text("select * from auroraconsulting.myjobs"))
-    jobs = []
-    for row in result.all():
-      jobs.append(row)
-      return jobs
+
 
 
 @app.route("/")
 def hello_world():
   jobs = load_jobs_from_db()
   return render_template("home.html",
-                         jobs=jobs,
-                         company_name='Aurora Consulting')
+                         jobs=jobs)
 
 
 @app.route("/api/jobs")
 def list_jobs():
-  return jsonify(JOBS)
+  jobs = load_jobs_from_db()
+  return jsonify(jobs)
+
+@app.route("/job/<id>")
+def show_job(id):
+  job=load_job_from_db(id)
+  return render_template("jobpage.html",job=job)
 
 
 app.route
